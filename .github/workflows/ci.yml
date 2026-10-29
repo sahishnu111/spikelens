@@ -1,0 +1,33 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ["3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+      - run: pip install -r requirements-dev.txt
+      - run: ruff check .
+      - run: pytest -q
+      - name: Accuracy eval (synthetic only, no network)
+        run: python eval/run_eval.py --no-nab
+  docker:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t spikelens .
+      - name: Smoke test container
+        run: |
+          docker run -d -p 7860:7860 --name sl spikelens
+          for i in $(seq 1 30); do curl -sf localhost:7860/api/health && break; sleep 1; done
+          curl -sf localhost:7860/api/demo?kind=mixed > /dev/null

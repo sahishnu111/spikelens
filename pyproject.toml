@@ -1,0 +1,18 @@
+[project]
+name = "spikelens"
+version = "0.1.0"
+description = "Lightweight, self-hostable anomaly detection for metrics and logs"
+requires-python = ">=3.11"
+authors = [{ name = "Sahishnu Kumar" }]
+license = { text = "MIT" }
+
+[tool.ruff]
+line-length = 160
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM", "RUF"]
+ignore = ["B008", "RUF001"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

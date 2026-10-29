@@ -1,0 +1,10 @@
+# Alternative: Render Blueprint (free web service; disk is ephemeral on the free plan)
+services:
+  - type: web
+    name: spikelens
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: SPIKELENS_ALLOW_WEBHOOKS
+        value: "0"

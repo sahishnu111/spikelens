@@ -1,0 +1,36 @@
+{
+  "machine": "x86_64, 8 vCPU, Python 3.13.5",
+  "streaming_points_per_sec": {
+    "robust_z (window=60)": 223714,
+    "robust_z (window=1000)": 18297,
+    "ewma": 3310251
+  },
+  "batch_10k_points_seconds": {
+    "robust_z": 0.267,
+    "ewma": 0.007,
+    "seasonal": 0.044,
+    "iforest": 0.918,
+    "ensemble": 0.452
+  },
+  "api": {
+    "ingest_batch_1": {
+      "requests": 2000,
+      "p50_ms": 1.42,
+      "p95_ms": 2.12,
+      "p99_ms": 2.51,
+      "points_per_sec": 637
+    },
+    "ingest_batch_100": {
+      "requests": 500,
+      "p50_ms": 2.82,
+      "p95_ms": 3.65,
+      "p99_ms": 6.04,
+      "points_per_sec": 30198
+    },
+    "analyze_1440_ensemble": {
+      "requests": 30,
+      "p50_ms": 140.63,
+      "p95_ms": 179.99
+    }
+  }
+}

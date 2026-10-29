@@ -1,0 +1,8 @@
+.venv
+.git
+__pycache__
+*.db*
+docs
+eval
+bench
+tests

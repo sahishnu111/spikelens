@@ -1,0 +1,14 @@
+flowchart LR
+  U[User browser<br/>dashboard: Chart.js] -- "upload CSV/JSON/log, demo, tune" --> API
+  C[Services / cron / agents] -- "POST /api/streams/ingest<br/>X-API-Key" --> API
+  P[Prometheus] -- "scrape /metrics" --> API
+  subgraph Container["Single Docker container (uvicorn + FastAPI)"]
+    API[FastAPI routes<br/>pydantic validation] --> LP[Log parser<br/>nginx/apache/generic -> per-minute series]
+    API --> BD[Batch detectors<br/>robust z · EWMA · seasonal residual · Isolation Forest]
+    LP --> BD
+    BD --> EN[Seasonal-aware ensemble<br/>ACF period detection + voting + explanations]
+    API --> SD[Streaming detectors<br/>sorted-window median/MAD · O1 EWMA]
+    SD --> DB[(SQLite WAL<br/>streams, hashed keys, points)]
+    SD -- anomalies --> WH[Background task:<br/>Slack-compatible webhook]
+  end
+  WH --> S[Slack / any webhook URL]

@@ -1,0 +1,467 @@
+{
+  "synthetic": {
+    "spikes": {
+      "robust_z": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "ewma": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "seasonal": {
+        "precision": 0.905,
+        "recall": 0.986,
+        "f1": 0.938
+      },
+      "iforest": {
+        "precision": 0.587,
+        "recall": 1.0,
+        "f1": 0.737
+      },
+      "ensemble": {
+        "precision": 0.801,
+        "recall": 1.0,
+        "f1": 0.884
+      }
+    },
+    "level_shift": {
+      "robust_z": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "ewma": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "seasonal": {
+        "precision": 0.204,
+        "recall": 0.7,
+        "f1": 0.311
+      },
+      "iforest": {
+        "precision": 0.08,
+        "recall": 1.0,
+        "f1": 0.147
+      },
+      "ensemble": {
+        "precision": 0.245,
+        "recall": 1.0,
+        "f1": 0.392
+      }
+    },
+    "seasonal_break": {
+      "robust_z": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "ewma": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "seasonal": {
+        "precision": 0.485,
+        "recall": 0.967,
+        "f1": 0.643
+      },
+      "iforest": {
+        "precision": 0.227,
+        "recall": 0.185,
+        "f1": 0.193
+      },
+      "ensemble": {
+        "precision": 0.961,
+        "recall": 0.959,
+        "f1": 0.959
+      }
+    },
+    "mixed": {
+      "robust_z": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "ewma": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "seasonal": {
+        "precision": 0.596,
+        "recall": 0.93,
+        "f1": 0.724
+      },
+      "iforest": {
+        "precision": 0.913,
+        "recall": 0.417,
+        "f1": 0.572
+      },
+      "ensemble": {
+        "precision": 0.703,
+        "recall": 0.935,
+        "f1": 0.802
+      }
+    },
+    "spikes (no seasonality)": {
+      "robust_z": {
+        "precision": 0.907,
+        "recall": 1.0,
+        "f1": 0.949
+      },
+      "ewma": {
+        "precision": 0.963,
+        "recall": 1.0,
+        "f1": 0.98
+      },
+      "seasonal": {
+        "precision": 0.907,
+        "recall": 1.0,
+        "f1": 0.949
+      },
+      "iforest": {
+        "precision": 0.527,
+        "recall": 1.0,
+        "f1": 0.687
+      },
+      "ensemble": {
+        "precision": 0.91,
+        "recall": 1.0,
+        "f1": 0.951
+      }
+    },
+    "level_shift (no seasonality)": {
+      "robust_z": {
+        "precision": 0.301,
+        "recall": 1.0,
+        "f1": 0.461
+      },
+      "ewma": {
+        "precision": 0.245,
+        "recall": 1.0,
+        "f1": 0.394
+      },
+      "seasonal": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "iforest": {
+        "precision": 0.113,
+        "recall": 1.0,
+        "f1": 0.199
+      },
+      "ensemble": {
+        "precision": 0.233,
+        "recall": 1.0,
+        "f1": 0.377
+      }
+    },
+    "mixed (no seasonality)": {
+      "robust_z": {
+        "precision": 0.485,
+        "recall": 0.98,
+        "f1": 0.648
+      },
+      "ewma": {
+        "precision": 0.428,
+        "recall": 0.98,
+        "f1": 0.595
+      },
+      "seasonal": {
+        "precision": 0.493,
+        "recall": 0.69,
+        "f1": 0.527
+      },
+      "iforest": {
+        "precision": 0.633,
+        "recall": 1.0,
+        "f1": 0.773
+      },
+      "ensemble": {
+        "precision": 0.425,
+        "recall": 1.0,
+        "f1": 0.596
+      }
+    }
+  },
+  "nab": {
+    "realKnownCause/machine_temperature_system_failure.csv": {
+      "points": 22695,
+      "windows": 4,
+      "robust_z": {
+        "window_recall": 1.0,
+        "flag_precision": 0.184,
+        "f1": 0.31,
+        "flags": 877
+      },
+      "ewma": {
+        "window_recall": 1.0,
+        "flag_precision": 0.355,
+        "f1": 0.524,
+        "flags": 211
+      },
+      "seasonal": {
+        "window_recall": 1.0,
+        "flag_precision": 0.184,
+        "f1": 0.31,
+        "flags": 877
+      },
+      "iforest": {
+        "window_recall": 1.0,
+        "flag_precision": 0.524,
+        "f1": 0.688,
+        "flags": 227
+      },
+      "ensemble": {
+        "window_recall": 1.0,
+        "flag_precision": 0.186,
+        "f1": 0.313,
+        "flags": 900
+      }
+    },
+    "realKnownCause/nyc_taxi.csv": {
+      "points": 10320,
+      "windows": 5,
+      "robust_z": {
+        "window_recall": 0.2,
+        "flag_precision": 0.333,
+        "f1": 0.25,
+        "flags": 3
+      },
+      "ewma": {
+        "window_recall": 0.0,
+        "flag_precision": 0.0,
+        "f1": 0.0,
+        "flags": 0
+      },
+      "seasonal": {
+        "window_recall": 1.0,
+        "flag_precision": 0.11,
+        "f1": 0.198,
+        "flags": 746
+      },
+      "iforest": {
+        "window_recall": 0.6,
+        "flag_precision": 0.096,
+        "f1": 0.166,
+        "flags": 104
+      },
+      "ensemble": {
+        "window_recall": 1.0,
+        "flag_precision": 0.091,
+        "f1": 0.166,
+        "flags": 529
+      }
+    },
+    "realKnownCause/ambient_temperature_system_failure.csv": {
+      "points": 7267,
+      "windows": 2,
+      "robust_z": {
+        "window_recall": 0.5,
+        "flag_precision": 0.069,
+        "f1": 0.121,
+        "flags": 29
+      },
+      "ewma": {
+        "window_recall": 0.0,
+        "flag_precision": 0.0,
+        "f1": 0.0,
+        "flags": 7
+      },
+      "seasonal": {
+        "window_recall": 0.5,
+        "flag_precision": 0.158,
+        "f1": 0.24,
+        "flags": 57
+      },
+      "iforest": {
+        "window_recall": 1.0,
+        "flag_precision": 0.342,
+        "f1": 0.51,
+        "flags": 73
+      },
+      "ensemble": {
+        "window_recall": 0.5,
+        "flag_precision": 0.2,
+        "f1": 0.286,
+        "flags": 45
+      }
+    },
+    "realKnownCause/cpu_utilization_asg_misconfiguration.csv": {
+      "points": 18050,
+      "windows": 1,
+      "robust_z": {
+        "window_recall": 1.0,
+        "flag_precision": 0.07,
+        "f1": 0.13,
+        "flags": 1593
+      },
+      "ewma": {
+        "window_recall": 1.0,
+        "flag_precision": 0.038,
+        "f1": 0.073,
+        "flags": 3499
+      },
+      "seasonal": {
+        "window_recall": 1.0,
+        "flag_precision": 0.22,
+        "f1": 0.361,
+        "flags": 1213
+      },
+      "iforest": {
+        "window_recall": 1.0,
+        "flag_precision": 0.111,
+        "f1": 0.2,
+        "flags": 180
+      },
+      "ensemble": {
+        "window_recall": 1.0,
+        "flag_precision": 0.067,
+        "f1": 0.126,
+        "flags": 2350
+      }
+    },
+    "realKnownCause/ec2_request_latency_system_failure.csv": {
+      "points": 4032,
+      "windows": 3,
+      "robust_z": {
+        "window_recall": 1.0,
+        "flag_precision": 0.565,
+        "f1": 0.722,
+        "flags": 23
+      },
+      "ewma": {
+        "window_recall": 1.0,
+        "flag_precision": 0.941,
+        "f1": 0.97,
+        "flags": 17
+      },
+      "seasonal": {
+        "window_recall": 1.0,
+        "flag_precision": 0.565,
+        "f1": 0.722,
+        "flags": 23
+      },
+      "iforest": {
+        "window_recall": 1.0,
+        "flag_precision": 0.39,
+        "f1": 0.561,
+        "flags": 41
+      },
+      "ensemble": {
+        "window_recall": 1.0,
+        "flag_precision": 0.571,
+        "f1": 0.727,
+        "flags": 28
+      }
+    },
+    "realAWSCloudwatch/ec2_cpu_utilization_825cc2.csv": {
+      "points": 4032,
+      "windows": 1,
+      "robust_z": {
+        "window_recall": 1.0,
+        "flag_precision": 0.416,
+        "f1": 0.587,
+        "flags": 89
+      },
+      "ewma": {
+        "window_recall": 1.0,
+        "flag_precision": 0.472,
+        "f1": 0.641,
+        "flags": 53
+      },
+      "seasonal": {
+        "window_recall": 1.0,
+        "flag_precision": 0.416,
+        "f1": 0.587,
+        "flags": 89
+      },
+      "iforest": {
+        "window_recall": 1.0,
+        "flag_precision": 0.659,
+        "f1": 0.794,
+        "flags": 41
+      },
+      "ensemble": {
+        "window_recall": 1.0,
+        "flag_precision": 0.434,
+        "f1": 0.606,
+        "flags": 99
+      }
+    },
+    "realAWSCloudwatch/rds_cpu_utilization_cc0c53.csv": {
+      "points": 4032,
+      "windows": 2,
+      "robust_z": {
+        "window_recall": 1.0,
+        "flag_precision": 0.294,
+        "f1": 0.455,
+        "flags": 68
+      },
+      "ewma": {
+        "window_recall": 1.0,
+        "flag_precision": 0.324,
+        "f1": 0.489,
+        "flags": 71
+      },
+      "seasonal": {
+        "window_recall": 1.0,
+        "flag_precision": 0.245,
+        "f1": 0.393,
+        "flags": 143
+      },
+      "iforest": {
+        "window_recall": 1.0,
+        "flag_precision": 0.415,
+        "f1": 0.586,
+        "flags": 41
+      },
+      "ensemble": {
+        "window_recall": 1.0,
+        "flag_precision": 0.352,
+        "f1": 0.52,
+        "flags": 91
+      }
+    },
+    "realTraffic/speed_7578.csv": {
+      "points": 1127,
+      "windows": 4,
+      "robust_z": {
+        "window_recall": 1.0,
+        "flag_precision": 0.587,
+        "f1": 0.74,
+        "flags": 46
+      },
+      "ewma": {
+        "window_recall": 1.0,
+        "flag_precision": 0.596,
+        "f1": 0.747,
+        "flags": 47
+      },
+      "seasonal": {
+        "window_recall": 1.0,
+        "flag_precision": 0.587,
+        "f1": 0.74,
+        "flags": 46
+      },
+      "iforest": {
+        "window_recall": 1.0,
+        "flag_precision": 0.833,
+        "f1": 0.909,
+        "flags": 12
+      },
+      "ensemble": {
+        "window_recall": 1.0,
+        "flag_precision": 0.623,
+        "f1": 0.767,
+        "flags": 53
+      }
+    }
+  }
+}

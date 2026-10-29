@@ -1,0 +1,8 @@
+services:
+  spikelens:
+    build: .
+    ports: ["7860:7860"]
+    volumes: ["spikelens-data:/data"]
+    restart: unless-stopped
+volumes:
+  spikelens-data:

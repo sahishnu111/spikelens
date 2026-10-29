@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SpikeLens: anomaly detection for metrics & logs</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header>
+  <h1>SpikeLens</h1>
+  <p class="tag">Find the spikes in your metrics and logs, with an explanation for each flagged point. Self-hosted, no account needed.</p>
+</header>
+<main>
+  <section class="card controls">
+    <div class="row">
+      <strong>Try a demo:</strong>
+      <button data-demo="mixed" class="primary">Synthetic metrics (labelled)</button>
+      <button data-demo="logs">nginx access log</button>
+      <button data-demo="level_shift">Level shift</button>
+      <button data-demo="seasonal_break">Seasonal break</button>
+    </div>
+    <div class="row">
+      <label>Or upload CSV / JSON / log file <input type="file" id="file" accept=".csv,.json,.log,.txt"></label>
+      <label>Log metric
+        <select id="logmetric"><option value="count">requests/min</option><option value="error_rate">error rate</option><option value="errors">errors/min</option></select>
+      </label>
+    </div>
+    <div class="row">
+      <label>Detector <select id="detector">
+        <option value="auto">auto</option><option value="ensemble">ensemble (vote)</option>
+        <option value="robust_z">rolling robust z (median/MAD)</option><option value="ewma">EWMA control chart</option>
+        <option value="seasonal">seasonal residual</option><option value="iforest">Isolation Forest</option>
+      </select></label>
+      <label>Sensitivity <input type="range" id="sens" min="0.5" max="2.5" step="0.1" value="1"> <span id="sensv">1.0</span></label>
+      <button id="exportcsv">Export CSV</button><button id="exportjson">Export JSON</button>
+    </div>
+    <p id="status" class="muted">Pick a demo or upload a file.</p>
+  </section>
+  <section class="card">
+    <div id="summary" class="summary"></div>
+    <div class="chartwrap"><canvas id="chart"></canvas></div>
+  </section>
+  <section class="card">
+    <h2>Flagged points and why</h2>
+    <table id="tbl"><thead><tr><th>#</th><th>time</th><th>value</th><th>score</th><th>why it was flagged</th></tr></thead><tbody></tbody></table>
+  </section>
+  <section class="card">
+    <h2>Streaming ingest API</h2>
+    <pre>curl -X POST $HOST/api/streams -H 'content-type: application/json' \
+  -d '{"name":"checkout-latency","detector":"robust_z","webhook_url":"https://hooks.slack.com/services/..."}'
+# -> {"id":1,"api_key":"sk_..."}
+curl -X POST $HOST/api/streams/ingest -H 'x-api-key: sk_...' -H 'content-type: application/json' \
+  -d '{"points":[{"ts":"2026-10-29T10:00:00Z","value":123.4}]}'</pre>
+    <p class="muted">Docs: <a href="/docs">/docs</a> (OpenAPI) · Prometheus metrics: <a href="/metrics">/metrics</a></p>
+  </section>
+</main>
+<script src="/static/chart.umd.min.js"></script>
+<script src="/static/app.js"></script>
+</body>
+</html>
